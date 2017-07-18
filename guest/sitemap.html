@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet.css">
+        <style>
+            #content{
+                margin: auto;
+                width: 60%;
+                min-width: 
+            }
+            #sitemap{
+                width: 700px;
+                height: 500px;
+                margin: 10px;
+            }
+            img{
+                padding: none;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+             
+            <div id="banner">  
+                     <a href="index.html"><img src="images/icon.png" alt="icon" class="icon"></a>
+                     <img src="images/fill.png" alt="fill" height="200px" class="fill">   
+            </div>
+            <div id="search">
+                <br>
+                <input type="text"  placeholder="Search">
+                <input type="button" value="Submit">
+                <br>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="dropdown">
+                            <a href="index.html" class="dropbtn">Home</a>
+                            <div class="dropdown-content">
+                              <a href="product.html">Products</a>
+                              <a href="recipt.html">Recipts</a>
+                              <a href="sitemap.html">Site Map</a>
+                              <a href="#">Contact Information</a>
+                            </div>
+                    </li>
+                    <li class="dropdown">
+                         <a href="product.html" class="dropbtn">Products</a>
+                        <div class="dropdown-content">
+                            <form action="">
+                            <label for="pid">Product:</label>
+                            <input type="text" id="pid" placeholder="Name,ID,Range(#-#)">
+                            <input type="submit" value="Submit">
+                            <br>    
+                            <input type="radio" name="radio" value="pname" checked><label for pname>Name</label>
+                            <input type="radio" name="radio" value="pid"><label for pid>ID</label>
+                            <input type="radio" name="radio" value="pricerange"><label for pricerange>Price Range</label>  
+                            </form>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                         <a href="recipt.html" class="dropbtn">Recipts</a>
+                        <div class="dropdown-content">
+                            <form action="">
+                            <label for="rid">Recipt #</label>
+                            <input type="text" id="rid" placeholder="ID">
+                            <input type="button" value="Submit">
+                            </form>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                         <a href="login.html" class="dropbtn">Login</a>
+                        <div class="dropdown-content">
+                            <form action="">
+                                <label for="rid">Login</label>
+                                <input type="text" id="id" placeholder="ID">
+                                <input type="password" id="password"
+                                placeholder="password">
+                                <input type="button" value="Submit">
+                            </form>    
+                        </div>
+                    </li>        
+                </ul>
+            </div>
+
+
+            <div id="content">
+                <h1>Site Map</h1>
+                <div id="sitemap" >
+                    <img src="images/blank.gif">
+                    <img src="images/top.gif">
+                    <a href="product.html"><img src="images/product.gif"></a>
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/top.gif">
+                    <a href="../user/info.html"><img src="images/info.gif"></a>
+                    
+                    <a href="index.html"><img src="images/guesthome.gif"></a>
+                    <img src="images/cross.gif">
+                    <a href="login.html"><img src="images/login.gif"></a>
+                    <img src="images/vertical.gif">
+                    <a href="../user/index.html"><img src="images/userhome.gif"></a>
+                    <img src="images/cross.gif">
+                    <a href="../user/invoice.html"><img src="images/invoice.gif"></a>  
+                    
+                    <img src="images/blank.gif">
+                    <img src="images/down.gif">
+                    <a href="recipt.html"><img src="images/recipt.gif"></a>
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/right.gif">
+                    <a href="../user/timetable.html"><img src="images/timetable.gif"></a>
+                    
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/right.gif">
+                    <a href="../user/employee.html"><img src="images/employee.gif"></a>
+                    
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/blank.gif">
+                    <img src="images/down.gif">
+                    <a href="../user/equipment.html"><img src="images/equiptment.gif"></a>
+                </div>
+            </div>
+            <div id="footer">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="fixed">
+            <a href="#banner">T<br>o<br>p</a>
+        </div>
+        
+    </body>
+</html>

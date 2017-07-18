@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <div id="wrapper">
+             
+            <div id="banner">  
+                     <a href="index.html"><img src="images/icon.png" alt="icon" class="icon"></a>
+                     <img src="images/fill.png" alt="fill" height="200px" class="fill">   
+            </div>
+            <div id="search">
+                <br>
+                <input type="text"  placeholder="Search">
+                <input type="button" value="Submit">
+                <br>
+            </div>
+            <div class="nav">
+                <ul>
+                          <li class="dropdown">
+                            <a href="index.html" class="dropbtn">Home</a>
+                            <div class="dropdown-content">
+                              <a href="product.html">Products</a>
+                              <a href="recipt.html">Recipts</a>
+                              <a href="sitemap.html">Site Map</a>
+                              <a href="#">Contact Information</a>
+                            </div>
+                          </li>
+                    <li class="dropdown">
+                         <a href="product.html" class="dropbtn">Products</a>
+                        <div class="dropdown-content">
+                            <form action="">
+                            <label for="pid">Product:</label>
+                            <input type="text" id="pid" placeholder="Name,ID,Range(#-#)">
+                            <input type="submit" value="Submit">
+                            <br>    
+                            <input type="radio" name="radio" value="pname" checked><label for pname>Name</label>
+                            <input type="radio" name="radio" value="pid"><label for pid>ID</label>
+                            <input type="radio" name="radio" value="pricerange"><label for pricerange>Price Range</label>  
+                            </form>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                         <a href="recipt.html" class="dropbtn">Recipts</a>
+                        <div class="dropdown-content">
+                            <form action="">
+                            <label for="rid">Recipt #</label>
+                            <input type="text" id="rid" placeholder="ID">
+                            <input type="button" value="Submit">
+                            </form>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                         <a href="login.html" class="dropbtn">Login</a>
+                        <div class="dropdown-content">
+                            <form action="">
+                                <label for="rid">Login</label>
+                                <input type="text" id="id" placeholder="ID">
+                                <input type="password" id="password"
+                                placeholder="password">
+                                <input type="button" value="Submit">
+                            </form>    
+                        </div>
+                    </li>        
+                </ul>
+            </div>
+
+
+            <div id="content">
+                <h1>Recipt</h1>
+                <br>
+                    <form action="">
+                        <label for="rid">Recipt #</label>
+                        <input type="text" id="rid" placeholder="ID">
+                        <input type="button" value="Submit">
+                    </form>
+                <br>
+                <br>
+                <table>
+                    <caption>Example Table</caption>
+                    <tr>
+                        <th>Column1</th>
+                        <th>Column2</th>
+                        <th>Column3</th>
+                        <th>Column4</th>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div id="footer">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="fixed">
+            <a href="#banner">T<br>o<br>p</a>
+        </div>
+        
+    </body>
+</html>
