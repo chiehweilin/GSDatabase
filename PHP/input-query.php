@@ -7,7 +7,7 @@ $EMPLOYEE_ID = $_POST['eID'];
 
 $conn = OpenCon();
 
-$sql = "SELECT '$colns' FROM EMPLOYEES WHERE EMPLOYEE_ID = '$EMPLOYEE_ID'";
+$sql = "SELECT $colns FROM EMPLOYEES WHERE EMPLOYEE_ID = $EMPLOYEE_ID";
 
 myTable($conn,$sql);
 

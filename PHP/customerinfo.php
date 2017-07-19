@@ -2,11 +2,11 @@
 
 include 'connect.php';
 
-$CUSTOMER_ID = $_POST['cID'];
+$cID = $_POST['cID'];
 
 $conn = OpenCon();
 
-$sql = "SELECT * FROM CUSTOMER, SERVED_CUSTOMERS WHERE CUSTOMER_ID = '$CUSTOMER_ID'";
+$sql = "SELECT * FROM CUSTOMER, SERVED_CUSTOMERS WHERE CUSTOMER.CUSTOMER_ID = '$cID' AND SERVED_CUSTOMERS.CUSTOMER_ID = CUSTOMER.CUSTOMER_ID";
 
 myTable($conn,$sql);
 
@@ -40,8 +40,10 @@ function myTable($obConn,$sql)
             }
 	        echo "</tr>";
         }
-
 	    echo "</table>";
+    }
+    else {
+        echo "No results";
     }
 }
 

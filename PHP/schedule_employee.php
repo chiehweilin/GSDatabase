@@ -1,32 +1,51 @@
 <?php
+
 include 'connect.php';
+
 $conn = OpenCon();
+
 $EMPLOYEE_ID = $_POST['eID'];
-$sql = "SELECT SCHEDULE_ID, EMPLOYEE_ID, DAY, TIME_IN, TIME_OUT, WORKING_HOUR FROM EMPLOYEE_SCHEDULE WHERE EMPLOYEE_ID = '$EMPLOYEE_ID'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-	echo "<table><tr>
-	<th class='border-class'>SCHEDULE_ID</th>
-	<th class='border-class'>EMPLOYEE_ID</th>
-	<th class='border-class'>DAY</th>
-	<th class='border-class'>TIME_IN</th>
-	<th class='border-class'>TIME_OUT</th>
-	<th class='border-class'>WORKING_HOUR</th></tr>";
-	// output data of each row
-	while($row = $result->fetch_assoc()) {
-		echo "<tr>
-		<td class='border-class'>".$row["SCHEDULE_ID"]."</td>
-		<td class='border-class'>".$row["EMPLOYEE_ID"]."</td>
-		<td class='border-class'>".$row["DAY"]."</td>
-		<td class='border-class'>".$row["TIME_IN"]."</td>
-		<td class='border-class'>".$row["TIME_OUT"]."</td>
-		<td class='border-class'>".$row["WORKING_HOUR"]."</td>
-		</tr>";
-		}
-		    echo "</table>";
-		} 
-		else {
-			echo "0 results";
-		}
+
+$sql = "SELECT * FROM EMPLOYEE_SCHEDULE WHERE EMPLOYEE_ID = '$EMPLOYEE_ID'";
+
+myTable($conn,$sql);
+
+function myTable($obConn,$sql)
+{
+    $rsResult = mysqli_query($obConn, $sql) or
+                die(mysqli_error($obConn));
+    if(mysqli_num_rows($rsResult) > 0)
+    {
+        //We start with header. >>>Here we retrieve the field names<<<
+        echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\" 
+        		cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
+        $i = 0;
+        while ($i < mysqli_num_fields($rsResult)) {
+            $field = mysqli_fetch_field_direct($rsResult, $i);
+            $fieldName = $field -> name;
+            echo "<td><strong>$fieldName</strong></td>";
+            $i = $i + 1;
+        }
+        echo "</tr>";
+
+        //>>>Field names retrieved<<<
+        //We dump info
+        $bolWhite = false;
+        while ($row = mysqli_fetch_assoc($rsResult)) {
+            echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr
+            bgcolor=\"#FFF\">";
+            $bolWhite = !$bolWhite;
+            foreach($row as $data) {
+                echo "<td>$data</td>";
+            }
+	        echo "</tr>";
+        }
+
+	    echo "</table>";
+    }
+    else {
+        echo "No result";
+    }
+}
 		CloseCon($conn);
 ?>

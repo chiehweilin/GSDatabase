@@ -1,30 +1,53 @@
 <?php
+
 include 'connect.php';
+
 $conn = OpenCon();
+
 $SUPPLIER_ID = $_POST['sID'];
-$sql = "SELECT SUPPLIER_ID, MANAGER_ID, ADDRESS, CONTACT_NUMBER, EMAIL FROM OAR_SUPPLIER WHERE SUPPLIER_ID = '$SUPPLIER_ID'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-	echo "<table><tr>
-	<th class='border-class'>SUPPLIER_ID</th>
-	<th class='border-class'>MANAGER_ID</th>
-	<th class='border-class'>ADDRESS</th>
-	<th class='border-class'>CONTACT_NUMBER</th>
-	<th class='border-class'>EMAIL</th></tr>";
-	// output data of each row
-	while($row = $result->fetch_assoc()) {
-		echo "<tr>
-		<td class='border-class'>".$row["SUPPLIER_ID"]."</td>
-		<td class='border-class'>".$row["MANAGER_ID"]."</td>
-		<td class='border-class'>".$row["ADDRESS"]."</td>
-		<td class='border-class'>".$row["CONTACT_NUMBER"]."</td>
-		<td class='border-class'>".$row["EMAIL"]."</td>
-		</tr>";
-		}
-		    echo "</table>";
-		} 
-		else {
-			echo "0 results";
-		}
-		CloseCon($conn);
+
+$sql = "SELECT * FROM OAR_SUPPLIER WHERE SUPPLIER_ID = '$SUPPLIER_ID'";
+
+myTable($conn,$sql);
+
+function myTable($obConn,$sql)
+{
+    $rsResult = mysqli_query($obConn, $sql) or
+                die(mysqli_error($obConn));
+    if(mysqli_num_rows($rsResult) > 0)
+    {
+        //We start with header. >>>Here we retrieve the field names<<<
+        echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\" 
+                cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
+        $i = 0;
+        while ($i < mysqli_num_fields($rsResult)) {
+            $field = mysqli_fetch_field_direct($rsResult, $i);
+            $fieldName = $field -> name;
+            echo "<td><strong>$fieldName</strong></td>";
+            $i = $i + 1;
+        }
+        echo "</tr>";
+
+        //>>>Field names retrieved<<<
+        //We dump info
+        $bolWhite = false;
+        while ($row = mysqli_fetch_assoc($rsResult)) {
+            echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr
+            bgcolor=\"#FFF\">";
+            $bolWhite = !$bolWhite;
+            foreach($row as $data) {
+                echo "<td>$data</td>";
+            }
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    }
+    else {
+        echo "No result";
+    }
+}
+
+CloseCon($conn);
+
 ?>
