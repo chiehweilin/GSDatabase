@@ -43,6 +43,9 @@ function myTable($obConn,$sql)
 
 	    echo "</table>";
     }
+    else {
+        echo "No result";
+    }
 }
 
 CloseCon($conn);
