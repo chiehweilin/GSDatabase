@@ -1,9 +1,21 @@
-<form action="http://localhost/Projection.php" method="post">
-<label>Enter the minimum price </label>
-<br>
-<label>Price: </label>
-<input name="price" type="text" placeholder="Type Here">
-<br>
-<br>
-<input type="submit" value="Show">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <h1>Products Above Set Price</h1>
+        <h2>This page returns information about products with price greater than the input</h2>
+            <br>
+            <form action="Projection.php" method="post">
+                <label for="id">Enter Minimum Price: </label>
+                <br>
+                <input type="text" id="id" name="price" placeholder="$">
+                <br>
+                <br>
+                <div class="center"><input type="submit" value="Show"></div>
+            </form>
+    </body>
+</html>

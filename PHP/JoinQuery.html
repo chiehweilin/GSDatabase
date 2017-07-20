@@ -1,9 +1,21 @@
-<form action="http://localhost/JoinQuery.php" method="post">
-<label>Enter the PRODUCT_ID to find all the customers that purchased that item: </label>
-<br>
-<label>PRODUCT_ID: </label>
-<input name="PRODUCT_ID" type="text" placeholder="Type Here">
-<br>
-<br>
-<input type="submit" value="Show">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <h1>Search Customers by Products</h1>
+        <h2>This page returns information about customers who have purchased a certain item by the given product ID.</h2>
+            <br>
+            <form action="JoinQuery.php" method="post">
+                <label for="id">Product ID: </label>
+                <br>
+                <input type="text" id="id" name="PRODUCT_ID" placeholder="ID">
+                <br>
+                <br>
+                <div class="center"><input type="submit" value="Show"></div>
+            </form>
+    </body>
+</html>

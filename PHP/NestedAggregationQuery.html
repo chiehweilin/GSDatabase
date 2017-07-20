@@ -1,10 +1,16 @@
-<form action="http://localhost/NestedAggregationQuery.php" method="post">
-<label>Choose an item, and this page will print out the customers' item who did not buy the item you chose. </label>
-<br>
-<label>Enter the PRODUCT_ID : </label>
-<br>
-<label>PRODUCT_ID: </label>
-<input name="PRODUCT_ID" type="text" placeholder="Type Here">
-<br>
-<input type="submit" value="Show">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <h1>Total Purchases</h1>
+        <h2>List the total number of items purchased by each customer.</h2>
+            <br>
+            <form action="NestedAggregationQuery.php" method="post">
+                <div class="center"><input type="submit" value="Show"></div>
+            </form>
+    </body>
+</html>

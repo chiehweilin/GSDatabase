@@ -1,36 +1,57 @@
+
 <?php
+
 include 'connect.php';
+
 $conn = OpenCon();
-$sql = "SELECT MANAGER.MANAGER_ID
-FROM manager
-WHERE NOT EXISTS
-(
-	SELECT products.PRODUCT_ID
-    FROM PRODUCTS
-    WHERE NOT EXISTS
-    (
-        SELECT supply.PRODUCT_ID
-        FROM supply,oar_supplier
-        WHERE supply.SUPPLIER_ID = oar_supplier.SUPPLIER_ID 
-        AND oar_supplier.MANAGER_ID = manager.MANAGER_ID
-		AND supply.PRODUCT_ID = products.PRODUCT_ID
-    )
- )";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-	echo "<table><tr>
-	<th class='border-class'>MANAGER_ID</th>
-	</tr>";
-	// output data of each row
-	while($row = $result->fetch_assoc()) {
-		echo "<tr>
-		<td class='border-class'>".$row["MANAGER_ID"]."</td>
-		</tr>";
-		}
-		    echo "</table>";
-		} 
-		else {
-			echo "0 results";
-		}
-		CloseCon($conn);
+
+$sql = "SELECT MANAGER.MANAGER_ID FROM MANAGER WHERE NOT EXISTS
+(SELECT PRODUCTS.PRODUCT_ID FROM PRODUCTS WHERE NOT EXISTS
+(SELECT SUPPLY.PRODUCT_ID FROM SUPPLY, OAR_SUPPLIER
+WHERE SUPPLY.SUPPLIER_ID = OAR_SUPPLIER.SUPPLIER_ID
+AND OAR_SUPPLIER.MANAGER_ID = MANAGER.MANAGER_ID
+AND SUPPLY.PRODUCT_ID = PRODUCTS.PRODUCT_ID));";
+
+myTable($conn,$sql);
+
+function myTable($obConn,$sql)
+{
+    $rsResult = mysqli_query($obConn, $sql) or
+                die(mysqli_error($obConn));
+    if(mysqli_num_rows($rsResult) > 0)
+    {
+        //We start with header. >>>Here we retrieve the field names<<<
+        echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\" 
+                cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
+        $i = 0;
+        while ($i < mysqli_num_fields($rsResult)) {
+            $field = mysqli_fetch_field_direct($rsResult, $i);
+            $fieldName = $field -> name;
+            echo "<td><strong>$fieldName</strong></td>";
+            $i = $i + 1;
+        }
+        echo "</tr>";
+
+        //>>>Field names retrieved<<<
+        //We dump info
+        $bolWhite = false;
+        while ($row = mysqli_fetch_assoc($rsResult)) {
+            echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr
+            bgcolor=\"#FFF\">";
+            $bolWhite = !$bolWhite;
+            foreach($row as $data) {
+                echo "<td>$data</td>";
+            }
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    }
+    else {
+        echo "No result";
+    }
+}
+
+CloseCon($conn);
+
 ?>
