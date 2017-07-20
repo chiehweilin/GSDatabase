@@ -2,9 +2,9 @@
 
 include 'connect.php';
 
-$conn = OpenCon();
-
 $SUPPLIER_ID = $_POST['sID'];
+
+$conn = OpenCon();
 
 $sql = "SELECT * FROM OAR_SUPPLIER WHERE SUPPLIER_ID = '$SUPPLIER_ID'";
 
