@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../stylesheet.css">
+    </head>
+    <body>
+        <h1>Update</h1>
+        <h2>This page updates the information of Supplier, Product, and Customer</h2>
+            <div id="select">
+                <ul>
+                    <li class="select"><a href="updatesupplier.html">Supplier</a></li>
+                    <li><a href="updatecustomer.html">Customer</a></li>
+                    <li><a href="updateproduct.html">Product</a></li>
+                </ul>
+                <form action="processUpdateSupplier.php" method="post">
+                    <label>Supplier ID: </label>
+                    <br>
+                    <input type="text" id="id" name="sID" placeholder="ID">
+                    <br>
+                    <label>Column: </label>
+                    <input type="text" id="datafield" name="datafield" placeholder="SUPPLIER_ID,MANAGER_ID,ADDRESS,CONTACT_NUMBER,EMAIL">
+                    <br>
+                    <label>New Value: </label>
+                    <input type="text" id="new" name="new">
+                    <br>
+                    <br>
+                    <div class="center"><input type="submit"  value="Enter"></div>
+                </form>
+            </div>
+    </body>
+</html>

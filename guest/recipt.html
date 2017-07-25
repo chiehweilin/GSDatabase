@@ -2,111 +2,118 @@
 <html lang="en">
     
     <head>
+        <title>Homepage</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="stylesheet.css">
     </head>
     <body>
         <div id="wrapper">
-             
+            <div id="header"><h1>DB Grocery Store</h1></div>
             <div id="banner">  
-                     <a href="index.html"><img src="images/icon.png" alt="icon" class="icon"></a>
-                     <img src="images/fill.png" alt="fill" height="200px" class="fill">   
-            </div>
-            <div id="search">
-                <br>
-                <input type="text"  placeholder="Search">
-                <input type="button" value="Submit">
-                <br>
+                     <div id="icon"></div>
+                     <div id="fill"></div>  
             </div>
             <div class="nav">
                 <ul>
                           <li class="dropdown">
                             <a href="index.html" class="dropbtn">Home</a>
                             <div class="dropdown-content">
-                              <a href="product.html">Products</a>
-                              <a href="recipt.html">Recipts</a>
                               <a href="sitemap.html">Site Map</a>
-                              <a href="#">Contact Information</a>
+                              <a href="contact.html">Contact Information</a>
                             </div>
                           </li>
                     <li class="dropdown">
-                         <a href="product.html" class="dropbtn">Products</a>
-                        <div class="dropdown-content">
-                            <form action="">
-                            <label for="pid">Product:</label>
-                            <input type="text" id="pid" placeholder="Name,ID,Range(#-#)">
-                            <input type="submit" value="Submit">
-                            <br>    
-                            <input type="radio" name="radio" value="pname" checked><label for pname>Name</label>
-                            <input type="radio" name="radio" value="pid"><label for pid>ID</label>
-                            <input type="radio" name="radio" value="pricerange"><label for pricerange>Price Range</label>  
-                            </form>
-                        </div>
+                         <a href="product.html">Products</a>
                     </li>
-                    <li class="dropdown">
-                         <a href="recipt.html" class="dropbtn">Recipts</a>
-                        <div class="dropdown-content">
-                            <form action="">
-                            <label for="rid">Recipt #</label>
-                            <input type="text" id="rid" placeholder="ID">
-                            <input type="button" value="Submit">
-                            </form>
-                        </div>
+                    <li>
+                         <a href="recipt.html">Recipts</a>
                     </li>
                     <li class="dropdown">
                          <a href="login.html" class="dropbtn">Login</a>
                         <div class="dropdown-content">
-                            <form action="">
-                                <label for="rid">Login</label>
-                                <input type="text" id="id" placeholder="ID">
-                                <input type="password" id="password"
-                                placeholder="password">
-                                <input type="button" value="Submit">
-                            </form>    
+                                <form name="login">
+                                    <label>Username</label>
+                                    <input type="text" name="username" placeholder="username">
+                                    <label>Password</label>
+                                    <input type="password" name="password" placeholder="password">
+                                    <input type="button" onclick="check(this.form)" value="Login">
+                                    <input type="reset" value="Cancel">
+                                </form>
+                                <script>
+                                    function check(form){
+                                        if(form.username.value == "Linda" && form.password.value == "123")
+                                        {
+                                            window.open('../user/index.html')
+                                        }
+                                        else if(form.username.value == "Brian" && form.password.value == "123")
+                                        {
+                                            window.open('../user/index.html')
+                                        }
+                                        else if(form.username.value == "Puck" && form.password.value == "123")
+                                        {
+                                            window.open('../user/index.html')
+                                        }
+                                        else if(form.username.value == "Arvin" && form.password.value == "123")
+                                        {
+                                            window.open('../user/index.html')
+                                        }
+                                        else
+                                        {
+                                            alert("Invalid Username or Password!")
+                                        }
+                                    }
+                                </script> 
                         </div>
                     </li>        
                 </ul>
-            </div>
-
-
-            <div id="content">
-                <h1>Recipt</h1>
-                <br>
-                    <form action="">
-                        <label for="rid">Recipt #</label>
-                        <input type="text" id="rid" placeholder="ID">
-                        <input type="button" value="Submit">
-                    </form>
+            </div>  
+            <div id="midcolumn">
+                <h1>Receipts</h1>
                 <br>
                 <br>
-                <table>
-                    <caption>Example Table</caption>
-                    <tr>
-                        <th>Column1</th>
-                        <th>Column2</th>
-                        <th>Column3</th>
-                        <th>Column4</th>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                </table>
-                <br>
+                <div id="receipt">
+                <form name="receipt">
+                     <label>Customer ID</label>
+                     <input type="text" name="cid" placeholder="ID">
+                     <br>
+                     <br>
+                     <div class="center">
+                         <input type="button" onclick="check(this.form)" value="Enter">
+                         <input type="reset" value="Cancel">
+                     </div>
+                </form>
+                <script>
+                    function check(form)
+                    {
+                        if(form.cid.value == "1000000")
+                        {
+                            window.open('receipt/1000000.html')
+                        }
+                        else if(form.cid.value == "1000001")
+                        {
+                                        window.open('receipt/1000001.html')
+                        }
+                        else if(form.cid.value == "1000002")
+                        {
+                                        window.open('receipt/1000002.html')
+                        }
+                        else if(form.cid.value == "1000003")
+                        {
+                                        window.open('receipt/1000003.html')
+                        }
+                        else if(form.cid.value == "1000004")
+                        {
+                                        window.open('receipt/1000004.html')
+                        }
+                        else
+                        {
+                        alert("Invalid Customer ID!")
+                        }
+                    }
+                 
+                    </script>
+                </div>
                 <br>
                 <br>
             </div>
@@ -117,10 +124,31 @@
                 <br>
                 <br>
             </div>
-        </div>
-        <div class="fixed">
-            <a href="#banner">T<br>o<br>p</a>
-        </div>
-        
+            </div>
+            <div id="leftcolumn">
+                <h3>News</h3>
+                <ul>
+                    <li><a href="http://globalnews.ca/news/3614056/langara-college-lockdown/">Langara Campus Lockdown Following Robbery</a></li>
+                    <li><a href="http://www.cbc.ca/news/canada/british-columbia/vancouver-langara-college-lockdown-1.4215426">Man Arrested For Questioning</a></li>
+                    <li><a href="http://vancouversun.com/news/local-news/wildfire-update-saturday">B.C. Wildfires: Evacuation Alerts Still Not Canceled</a></li>
+                    <li><a href="http://www.vancourier.com/news/vancouver-man-arrested-for-city-s-first-2017-homicide-1.21299176">Man Arrested For City's First 2017 Homicide</a></li>
+                    <li><a href="http://www.news1130.com/2017/07/22/warning-death-cap-mushrooms-victoria-vancouver/">Newest Killer of Vanocuver and Victoria: Death Cap Mushrooms</a></li>
+                    <li><a href="http://www.straight.com/news/938551/vancouver-pursues-more-police-reforms-triggered-transgender-roller-girl-angela-dawson">Vancouver Police Force Pursues Different Approach Regarding Gender Identities</a></li>
+                </ul>
+            </div>
+            <div id="rightcolumn"> 
+                <div class="advertisment">
+                     <a href="advertisment/today.html"><img src="images/ad1.gif" alt="advertisment 1"></a>               
+                </div>
+                <div class="advertisment">
+                     <a href="advertisment/month.html"><img src="images/ad2.gif" alt="advertisment 2"></a>                
+                </div>
+                <div class="advertisment">
+                     <a href="advertisment/summer.html"><img src="images/ad2.gif" alt="advertisment 3"></a>                
+                </div>
+                <div class="fixed">
+                    <a href="#banner">T<br>o<br>p</a>
+                </div>
+            </div> 
     </body>
 </html>

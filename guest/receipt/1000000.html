@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>Receipt #1000000</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../stylesheet.css">
+    </head>
+    <body>
+        <div id="wrapper">
+             
+            <div id="banner">  
+                     <div id="icon"></div>
+                     <div id="fill"></div>  
+            </div>
+            <div class="nav">
+                <ul>
+                          <li class="dropdown">
+                            <a href="../index.html" class="dropbtn">Home</a>
+                            <div class="dropdown-content">
+                              <a href="../sitemap.html">Site Map</a>
+                              <a href="../contact.html">Contact Information</a>
+                            </div>
+                          </li>
+                    <li class="dropdown">
+                         <a href="../product.html">Products</a>
+                    </li>
+                    <li class="dropdown">
+                         <a href="../recipt.html" class="dropbtn">Recipts</a>
+                       <div class="dropdown-content">
+                            <form name="receipt">
+                                 <label>Customer ID</label>
+                                 <input type="text" name="cid" placeholder="ID">
+                                     <input type="button" onclick="check(this.form)" value="Submit">
+                            </form>
+                            <script>
+                                function check(form)
+                                {
+                                    if(form.cid.value == "1000000")
+                                    {
+                                        window.open('1000000.html')
+                                    }
+                                    else if(form.cid.value == "1000001")
+                                    {
+                                                    window.open('1000001.html')
+                                    }
+                                    else if(form.cid.value == "1000002")
+                                    {
+                                                    window.open('1000002.html')
+                                    }
+                                    else if(form.cid.value == "1000003")
+                                    {
+                                                    window.open('1000003.html')
+                                    }
+                                    else if(form.cid.value == "1000004")
+                                    {
+                                                    window.open('1000004.html')
+                                    }
+                                    else
+                                    {
+                                    alert("Invalid Customer ID!")
+                                    }
+                                }
+
+                                </script>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                         <a href="../login.html" class="dropbtn">Login</a>
+                        <div class="dropdown-content">
+                                <form name="login">
+                                    <label>Username</label>
+                                    <input type="text" name="username" placeholder="username">
+                                    <label>Password</label>
+                                    <input type="password" name="password" placeholder="password">
+                                    <input type="button" onclick="check(this.form)" value="Login">
+                                    <input type="reset" value="Cancel">
+                                </form>
+                                <script>
+                                function check(form)
+                                {
+                                 if(form.username.value == "Linda" && form.password.value == "123")
+                                  {
+                                    window.open('../../user/index.html')
+                                  }
+                                 else if(form.username.value == "Brian" && form.password.value == "123")
+                                  {
+                                    window.open('../../user/index.html')
+                                  }
+                                else if(form.username.value == "Puck" && form.password.value == "123")
+                                  {
+                                    window.open('../../user/index.html')
+                                  }
+                                else if(form.username.value == "Arvin" && form.password.value == "123")
+                                  {
+                                    window.open('../../user/index.html')
+                                  }
+                                 else
+                                 {
+                                   alert("Error Password or Username")
+                                  }
+                                }
+                                </script>   
+                        </div>
+                    </li>        
+                </ul>
+            </div>  
+
+
+            <div id="midcolumn">
+                <h1>Receipts</h1>
+                <br>
+                <br>
+                <table>
+                    <tr>
+                        <th>Receipt ID</th>
+                        <td>1000000</td>
+                    </tr>
+                    <tr>
+                        <th>Customer ID</th>
+                        <td>1000000</td>
+                    </tr>
+                    <tr>
+                        <th>Sales Date</th>
+                        <td>2017-04-11</td>
+                    </tr>
+                    <tr>
+                        <th>Pre-Tax Amount</th>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th>Post-Tax Amount</th>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <th>Tax Amount</th>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th>Payment Method</th>
+                        <td>CASH</td>
+                    </tr>
+                </table>
+                
+            </div>
+            <div id="footer">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div id="leftcolumn">
+                <h3>News</h3>
+                <ul>
+                    <li><a href="http://globalnews.ca/news/3614056/langara-college-lockdown/">Langara Campus Lockdown Following Robbery</a></li>
+                    <li><a href="http://www.cbc.ca/news/canada/british-columbia/vancouver-langara-college-lockdown-1.4215426">Man Arrested For Questioning</a></li>
+                    <li><a href="http://vancouversun.com/news/local-news/wildfire-update-saturday">B.C. Wildfires: Evacuation Alerts Still Not Canceled</a></li>
+                    <li><a href="http://www.vancourier.com/news/vancouver-man-arrested-for-city-s-first-2017-homicide-1.21299176">Man Arrested For City's First 2017 Homicide</a></li>
+                    <li><a href="http://www.news1130.com/2017/07/22/warning-death-cap-mushrooms-victoria-vancouver/">Newest Killer of Vanocuver and Victoria: Death Cap Mushrooms</a></li>
+                    <li><a href="http://www.straight.com/news/938551/vancouver-pursues-more-police-reforms-triggered-transgender-roller-girl-angela-dawson">Vancouver Police Force Pursues Different Approach Regarding Gender Identities</a></li>
+                </ul>
+            </div>
+            <div id="rightcolumn"> 
+                <div class="advertisment">
+                     <a href="../advertisment/today.html"><img src="../images/ad1.gif" alt="advertisment 1"></a>               
+                </div>
+                <div class="advertisment">
+                     <a href="../advertisment/month.html"><img src="../images/ad2.gif" alt="advertisment 2"></a>                
+                </div>
+                <div class="advertisment">
+                     <a href="../advertisment/summer.html"><img src="../images/ad2.gif" alt="advertisment 3"></a>                
+                </div>
+                <div class="fixed">
+                    <a href="#banner">T<br>o<br>p</a>
+                </div>
+            </div> 
+    </body>
+</html>

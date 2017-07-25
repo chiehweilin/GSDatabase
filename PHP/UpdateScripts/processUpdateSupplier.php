@@ -1,6 +1,6 @@
 <?php
 
-include 'connect.php';
+include '../connect.php';
 
 $sID = $_POST['sID'];
 $datafield = $_POST['datafield'];

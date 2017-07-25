@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../stylesheet.css">
+    </head>
+    <body>
+        <h1>Update</h1>
+        <h2>This page updates the information of Supplier, Product, and Customer</h2>
+                <ul>
+                    <li><a href="updatesupplier.html">Supplier</a></li>
+                    <li><a href="updatecustomer.html">Customer</a></li>
+                    <li class="select"><a href="updateproduct.html">Product</a></li>
+                </ul>
+                <form action="processUpdateProduct.php" method="post">
+                    <label>Product ID: </label>
+                    <br>
+                    <input type="text" id="id" name="pID" placeholder="ID">
+                    <br>
+                    <label>Column: </label>
+                    <input type="text" id="datafield" name="datafield" placeholder="PRODUCT_ID INTEGER,EXPIRATION_DATE,PRODUCED_DATE,WEIGHT,PRICE,NAME">
+                    <br>
+                    <label>New Value: </label>
+                    <input type="text" id="new" name="new">
+                    <br>
+                    <br>
+                    <div class="center"><input type="submit"  value="Enter"></div>
+                </form>
+    </body>
+</html>
